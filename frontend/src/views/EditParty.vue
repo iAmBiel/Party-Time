@@ -1,6 +1,6 @@
 <template>
   <div class="editparty">
-    <h1>Edite a sua festa:</h1>
+    <h1>Edit your party:</h1>
     <PartyForm :party="party" page="editparty" btnText="Editar Festa" :key="componentKey"  />
   </div>
 </template>

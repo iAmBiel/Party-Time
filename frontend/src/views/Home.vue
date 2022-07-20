@@ -1,15 +1,15 @@
 <template>
   <div class="home">
-    <h1>Veja as últimas festas</h1>
+    <h1>See the latest parties</h1>
     <div class="parties-container">
         <div v-for="(party, index) in parties" :key="index" class="party-container">
             <div class="party-img" :style="{'background-image': 'url(' + party.photos[0] +')'}"></div>
             <router-link :to="`/party/${party._id}`" class="party-title">{{ party.title }}</router-link>
-            <p class="party-date">Data: {{ party.partyDate }}</p>
-            <router-link :to="`/party/${party._id}`" class="party-details-btn">Ver Mais</router-link>
+            <p class="party-date">Date: {{ party.partyDate }}</p>
+            <router-link :to="`/party/${party._id}`" class="party-details-btn">More</router-link>
         </div>        
     </div>
-    <p v-if="parties.length == 0">Não há festas ainda...</p>
+    <p v-if="parties.length == 0">No parties yet...</p>
   </div>
 </template>
 <script>

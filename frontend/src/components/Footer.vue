@@ -1,7 +1,7 @@
 <template>
     <footer>
     <h3>Party Time &copy; 2022</h3>
-    <p>O melhor local para compartilhar seus eventos!</p>
+    <p>The best place to share your events!</p>
   </footer>
 </template>
 

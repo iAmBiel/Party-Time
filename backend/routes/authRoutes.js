@@ -13,18 +13,18 @@ router.post("/register", async (req, res) => {
 
     // check for required fields
     if(name == null || email == null || password == null || confirmpassword == null) {
-        return res.status(400).json({ error: "Por favor, preencha todos os campos." });
+        return res.status(400).json({ error: "Please fill in all fields." });
     }
     
     // check if password match
     if(password != confirmpassword){
-        return res.status(400).json({ error: "Senha inválida" });
+        return res.status(400).json({ error: "Invalid password" });
     }
 
     // check if user exists
     const emailExists = await User.findOne({ email: email });
     if(emailExists){
-        return res.status(400).json({ error: "O email já está em uso!" }); 
+        return res.status(400).json({ error: "Email is already in use!" }); 
     }
 
     // creating password
@@ -52,7 +52,7 @@ router.post("/register", async (req, res) => {
         );
 
         // return token
-        res.json({ error: null, msg: "Você realizou o cadastro com sucesso!", token: token, userId: newUser._id });
+        res.json({ error: null, msg: "You have successfully registered!", token: token, userId: newUser._id });
 
     }catch(error){
 
@@ -71,14 +71,14 @@ router.post("/login", async (req, res) => {
     const user = await User.findOne({ email: email });
 
     if (!user) {
-        return res.status(400).json({ error: "Não há usuário cadastrado com este e-mail!" });
+        return res.status(400).json({ error: "There is no user registered with this email!" });
     }
 
     // check if password match
     const checkPassword = await bcrypt.compare(password, user.password)
 
     if(!checkPassword) {
-        return res.status(400).json({ error: "Senha inválida" });
+        return res.status(400).json({ error: "Invalid password" });
     }
 
     // create token
@@ -92,7 +92,7 @@ router.post("/login", async (req, res) => {
     );
     
     // return token
-    res.json({ error: null, msg: "Você está autenticado!", token: token, userId: user._id });
+    res.json({ error: null, msg: "You are authenticated!", token: token, userId: user._id });
 
 })
 

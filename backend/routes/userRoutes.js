@@ -23,7 +23,7 @@ router.get("/:id", verifyToken, async (req, res) => {
 
     } catch(err) {
 
-        return res.status(400).json({ error: "O usuário não existe!" });
+        return res.status(400).json({ error: "The user does not exist!" });
 
     }
 
@@ -43,7 +43,7 @@ router.patch("/", verifyToken, async (req, res) => {
     // check if user id is equal token user id
     if(userId != userReqId) {
   
-      res.status(401).json({ error: "Acesso negado!" });
+      res.status(401).json({ error: "Access denied!" });
   
     }
 
@@ -56,7 +56,7 @@ router.patch("/", verifyToken, async (req, res) => {
        // check if password match
     if(password != confirmPassword) {
 
-        res.status(401).json({ error: "As senhas não conferem." });
+        res.status(401).json({ error: "Passwords do not match." });
       
       // change password
       } else if(password == confirmPassword && password != null) {
@@ -78,7 +78,7 @@ router.patch("/", verifyToken, async (req, res) => {
     
         // returns updated data
         const updatedUser = await User.findOneAndUpdate({ _id: userId }, { $set:  updateData}, {new: true});
-        res.json({ error: null, msg: "Usuário atualizado com sucesso!", data: updatedUser });
+        res.json({ error: null, msg: "User successfully updated!", data: updatedUser });
     
       } catch (error) {
     
@@ -114,7 +114,7 @@ router.delete("/:id", async (req, res) => {
 
   if(!user){
 
-    res.status(402).json({ msg: "O usuário não foi encontrado!" })
+    res.status(402).json({ msg: "User not found!" })
     return
 
   }
@@ -123,7 +123,7 @@ router.delete("/:id", async (req, res) => {
 
     await User.deleteOne({_id: id})
 
-    res.status(200).json({ msg: "O usuário foi removido com sucesso!", user: user })
+    res.status(200).json({ msg: "User has been successfully removed!", user: user })
 
   } catch(error){
 

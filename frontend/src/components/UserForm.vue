@@ -4,20 +4,20 @@
         <form id="user-form" @submit="page === 'register' ? register($event) : update($event)">
             <input type="hidden" id="id" name="id" v-model="id">
             <div class="input-container">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" v-model="name" placeholder="Digite o seu nome">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" v-model="name" placeholder="Enter your name">
             </div>
             <div class="input-container">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" v-model="email"  placeholder="Digite o seu e-mail">
+                <input type="email" id="email" name="email" v-model="email"  placeholder="Enter your e-mail">
             </div>
             <div class="input-container">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" v-model="password"  placeholder="Digite sua senha">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" v-model="password"  placeholder="Enter your password">
             </div>
             <div class="input-container">
-                <label for="confirmpassword">Senha:</label>
-                <input type="password" id="confirmpassword" name="confirmpassword" v-model="confirmpassword"  placeholder="Confirme sua senha">
+                <label for="confirmpassword">Confirm Password:</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" v-model="confirmpassword"  placeholder="Confirm your password">
             </div>
             <InputSubmit :text="btnText" />
         </form>

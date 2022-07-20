@@ -1,14 +1,14 @@
 <template>
   <div class="dashboard">
     <div class="title-container">
-        <h1>Gerencie seus eventos</h1>
-        <router-link to="/newparty" class="btn">Cadastrar Festa</router-link>
+        <h1>Manage your events</h1>
+        <router-link to="/newparty" class="btn">Register Party</router-link>
     </div>
     <div v-if="parties.length > 0">
         <DataTable :parties="parties" />
     </div>
     <div v-else>
-        <p>Você ainda não tem festas cadastradas, <router-link to="/newparty">clique aqui para criar a sua festa!</router-link></p>
+        <p>You don't have parties registered yet, <router-link to="/newparty">click here to create your party!</router-link></p>
     </div>
   </div>
 </template>

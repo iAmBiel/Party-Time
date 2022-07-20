@@ -3,8 +3,8 @@
       <Message :msg="msg" :msgClass="msgClass" />
       <div class="data-table-heading">
           <div class="data-id-heading">Nº:</div>
-          <div class="data-title-heading">Nome da Festa:</div>
-          <div class="data-actions-heading">Ações:</div>
+          <div class="data-title-heading">Party Name:</div>
+          <div class="data-actions-heading">Actions:</div>
       </div>
       <div class="data-table-body">
         
@@ -14,8 +14,8 @@
                 <router-link :to="`/party/${party._id}`">{{ party.title }}</router-link>
             </div>
             <div class="data-actions-container">
-                <router-link :to="`/editparty/${party._id}`" class="edit-btn">Editar</router-link>
-                <button class="remove-btn" @click="remove(party._id)">Remover</button>
+                <router-link :to="`/editparty/${party._id}`" class="edit-btn">Edit</router-link>
+                <button class="remove-btn" @click="remove(party._id)">Remove</button>
             </div>
         </div>
 

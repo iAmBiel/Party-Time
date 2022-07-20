@@ -9,9 +9,9 @@
         </div>
       </div>
       <div class="party-details">
-        <p class="bold">Descrição da festa:</p>
+        <p class="bold">Party Description:</p>
         <p class="party-description">{{ party.description }}</p>
-        <p class="bold">Data da festa:</p>
+        <p class="bold">Party Date:</p>
         <p class="party-date">{{ party.partyDate }}</p>        
       </div>
     </div>

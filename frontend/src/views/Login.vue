@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <h1>Entrar no Party Time</h1>
+    <h1>Join Party Time</h1>
     <LoginForm />
   </div>
 </template>

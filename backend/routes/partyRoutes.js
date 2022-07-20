@@ -31,7 +31,7 @@ router.post("/", verifyToken, upload.fields([{name: "photos"}]),  async (req,res
 
   // validations
   if(title == "null" || description == "null" || partyDate == "null") {
-    return res.status(400).json({ error: "Preencha pelo menos nome, descrição e data." });
+    return res.status(400).json({ error: "Fill in at least name, description and date." });
   }
 
   // verify user 
@@ -68,7 +68,7 @@ router.post("/", verifyToken, upload.fields([{name: "photos"}]),  async (req,res
     try {
 
       const newParty = await party.save();
-      res.json({ error: null, msg: "Evento criado com sucesso!", data: newParty });
+      res.json({ error: null, msg: "Event created successfully!", data: newParty });
 
     } catch(err) {
 
@@ -78,7 +78,7 @@ router.post("/", verifyToken, upload.fields([{name: "photos"}]),  async (req,res
 
   } catch(err) {
 
-    res.status(400).json({ error: "Acesso negado." })
+    res.status(400).json({ error: "Access denied." })
 
   }
 
@@ -179,7 +179,7 @@ router.get("/:id", async (req, res) => {
 
   } catch(err) {
 
-    res.json({ error: null, error: "Este evento não existe!" });
+    res.json({ error: null, error: "This event does not exist!" });
 
   }
 
@@ -196,11 +196,11 @@ router.delete("/", verifyToken, async (req, res) => {
   try {      
 
     await Party.deleteOne({ _id: partyId, userId: userId });
-    res.json({ error: null, msg: "Evento removido com sucesso!" });
+    res.json({ error: null, msg: "Event removed successfully!" });
 
   } catch (err) {
 
-    res.status(400).json({ error: "Acesso negado!" })
+    res.status(400).json({ error: "Access denied!" })
       
   }
 
@@ -226,7 +226,7 @@ router.patch("/", verifyToken, upload.fields([{name: "photos"}]), async (req, re
 
   // validations
   if(title == "null" || description == "null" || partyDate == "null") {
-    return res.status(400).json({ error: "Preencha pelo menos nome, descrição e data." });
+    return res.status(400).json({ error: "Fill in at least name, description and date." });
   }
 
   // verify user 
@@ -239,7 +239,7 @@ router.patch("/", verifyToken, upload.fields([{name: "photos"}]), async (req, re
   const user = await User.findOne({ _id: userId });
 
   if (!user) {
-    return res.status(400).json({ error: "O usuário não existe!" });
+    return res.status(400).json({ error: "The user does not exist!" });
   }
 
   // build party object
@@ -269,7 +269,7 @@ router.patch("/", verifyToken, upload.fields([{name: "photos"}]), async (req, re
 
     // returns updated data
     const updatedParty = await Party.findOneAndUpdate({ _id: partyId, userId: partyUserId }, { $set: party }, {new: true});
-    res.json({ error: null, msg: "Evento atualizado com sucesso!", data: updatedParty });
+    res.json({ error: null, msg: "Event successfully updated!", data: updatedParty });
 
   } catch (error) {
 

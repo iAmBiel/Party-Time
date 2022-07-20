@@ -5,27 +5,27 @@
             <input type="hidden" id="id" name="id" v-model="id">
             <input type="hidden" id="user_id" name="user_id" v-model="user_id">
             <div class="input-container">
-                <label for="title">Título do Evento:</label>
-                <input type="text" id="title" name="title" v-model="title" placeholder="Digite o título">
+                <label for="title">Event Title:</label>
+                <input type="text" id="title" name="title" v-model="title" placeholder="Type the title">
             </div>
             <div class="input-container">
-                <label for="description">Descrição:</label>
-                <textarea id="description" name="description" v-model="description" placeholder="O que vai acontecer ou o que já aconteceu?"></textarea>
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" v-model="description" placeholder="What will happen or what has already happened?"></textarea>
             </div>
             <div class="input-container">
-                <label for="party_date">Data da Festa:</label>
+                <label for="party_date">Party Date:</label>
                 <input type="date" id="party_date" name="party_date" v-model="party_date">
             </div>
             <div class="input-container">
-                <label for="photos">Imagens:</label>
+                <label for="photos">Images:</label>
                 <input type="file" multiple="multiple" id="photos" name="photos" ref="file" @change="onChange">
             </div>
             <div v-if="page === 'editparty' && showMiniImages" class="mini-images">
-                <p>Imagens atuais:</p>
+                <p>Current Images:</p>
                 <img v-for="(photo, index) in photos" :src="`${photo}`" :key="index">
             </div>
             <div class="input-container checkbox-container">
-                <label for="privacy">Evento privado</label>
+                <label for="privacy">Private Event</label>
                 <input type="checkbox" multiple id="privacy" name="privacy" v-model="privacy">
             </div>
             <InputSubmit :text="btnText" />

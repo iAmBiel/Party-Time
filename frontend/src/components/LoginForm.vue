@@ -4,13 +4,13 @@
         <form id="login-form" @submit="login($event)">
             <div class="input-container">
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" v-model="email" placeholder="Digite o seu e-mail">
+                <input type="email" id="email" name="email" v-model="email" placeholder="Enter your e-mail">
             </div>
             <div class="input-container">
-                <label for="password">Senha:</label>
-                <input type="password" id="password" name="password" v-model="password" placeholder="Digite sua senha">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" v-model="password" placeholder="Enter your password">
             </div>
-            <InputSubmit text="Entrar" />
+            <InputSubmit text="Login" />
         </form>
     </div>
 </template>

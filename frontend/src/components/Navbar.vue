@@ -6,10 +6,10 @@
     <h2 id="nav-title">Party Time</h2>
     <div id="nav-links">
       <router-link to="/">Home</router-link>
-      <router-link to="/login" v-show="!authenticated">Entrar</router-link>
-      <router-link to="/register" v-show="!authenticated">Cadastrar</router-link>
+      <router-link to="/login" v-show="!authenticated">Sign in</router-link>
+      <router-link to="/register" v-show="!authenticated">Sign up</router-link>
       <router-link to="/dashboard" v-show="authenticated">Dashboard</router-link>
-      <router-link to="/profile" v-show="authenticated">Configurações</router-link>
+      <router-link to="/profile" v-show="authenticated">Settings</router-link>
       <button @click="logout($event)" v-show="authenticated">Logout</button>
     </div>
   </div>
@@ -50,7 +50,8 @@ export default {
     align-items: center;
     justify-content: space-between;
     padding: 20px;
-    border-bottom: 1px solid #eee;
+    /*border-bottom: 1px solid #eee;*/
+    background-color: #f4c430;
   }
   #nav a {
     text-decoration: none;
@@ -76,7 +77,7 @@ export default {
   }
 
   button {
-    background-color: #FFF;
+    background-color: #f4c430;
     border: none;
     font-size: 16px;
     cursor: pointer;
