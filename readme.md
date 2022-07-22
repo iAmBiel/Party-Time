@@ -1,6 +1,14 @@
 # Party Time
 ##### Full Stack Aplicattion
 
+##### Made with: 
+  - HTML
+  - CSS 
+  - Java Script
+  - Node.js
+  - MongoDB
+  - Vue.js
+
 ![1](https://user-images.githubusercontent.com/107372647/180078008-c1bf2c23-eb56-4525-91d9-c889fe3011e6.png)
 
 
@@ -15,13 +23,7 @@
 
 ![5](https://user-images.githubusercontent.com/107372647/180078476-7d4eaf24-21df-47e0-a29d-4db715826edc.png)
 
-##### Made with: 
-  - HTML
-  - CSS 
-  - Java Script
-  - Node.js
-  - MongoDB
-  - Vue.js
+
 
 
 
